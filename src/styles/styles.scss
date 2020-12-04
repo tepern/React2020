@@ -1,0 +1,656 @@
+@import "partial/fonts.scss";
+@import "partial/variables.scss";
+@import "partial/mixins.scss";
+
+html,body,h1,h2,h3 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: $dark;
+}
+
+body,div,p,a,span {
+    font-family:  $josefin, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight: normal;
+    color: $base;
+
+    @media(max-width: $big-mobile_width) {
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    @media(max-width: $container_width) {
+        
+    }
+} 
+
+div {
+    box-sizing: border-box;
+} 
+
+h1,h2,h3,h4 {
+    margin: 0;
+}
+
+h1,.h1 {
+    margin-bottom: 22px;
+    margin-top: 15px;
+    font-size: 60px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+h2,.h2 {
+    line-height: 1.5;
+    color: $gold;
+    text-transform: capitalize;
+    font-size: 60px;
+    font-weight: 800;
+    letter-spacing: 0.005em;
+}
+
+h3,.h3 {
+    font-size: 18px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: $gold;
+}
+
+h4,.h4 {
+    margin: 10px 0;
+    color: $gold; 
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1em;   
+}
+
+p {
+    margin: 0;
+}
+
+blockquote, .blockquote {
+
+}
+
+img {
+    max-width: 100%;
+}
+
+.strong {
+    font-size: 40px;
+    color: $gold;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.title {
+    
+}
+
+.text {
+    font-style: italic;
+}
+
+
+.white {
+    color: $white !important;
+}
+
+.black {
+    color: $black !important;
+}
+
+.section {
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.container {
+    width: $container_width;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: $mobile_width) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }  
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+* {
+    outline: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+a {
+   cursor: pointer;
+   text-decoration: none;
+
+   &:focus {
+    outline: none;
+   }
+}
+
+button {
+   cursor: pointer;
+
+   &:focus {
+    outline: none;
+   }
+}
+
+.btn {
+    display: inline-block;
+    margin: 25px 0 5px;
+    padding: 10px 19px;
+    border: 1px solid $gold;
+    background: transparent;
+    color: $gold;
+    transition: $transition_all;
+
+    &:hover {
+        background: $gold;
+        color: $white;
+        border-color: $gold;
+
+        span {
+
+            &::after {
+                border-left: 1px solid $white;
+                border-top: 1px solid $white;
+            }
+        }
+    }
+
+    span {
+        position: relative;
+        padding-right: 15px;
+        color: inherit;
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 20%;
+            right: 0;
+            width: 7px;
+            height: 7px;
+            border-left: 1px solid $gold;
+            border-top: 1px solid $gold;
+            transform: rotate(135deg);
+        }
+    }
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding-top: 20px;
+    z-index: 1;
+
+    &_fixed {
+        background: $dark;
+        z-index: 2;
+    }
+
+    &-top {
+        text-align: center;
+    }
+     
+    &-menu {
+        display: flex;
+        justify-content: center;
+
+        &__item {
+            position: relative;
+            margin: 0 19px;
+        }
+
+        &__link {
+           position: relative;
+           text-align: center;
+
+           &_active {
+               color: $gold;
+
+                &::before {
+                    left: 0;
+                    width: 100%;
+                    transition: $transition_all;
+                }
+           }
+
+           &::before {
+               @include before(auto,50%,auto,-4px);
+               width: 0;
+               height: 2px; 
+               background: $gold;
+               transition: $transition_all;
+           }
+
+            &:hover {
+                color: $gold;
+
+                &::before {
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.sub-menu {
+    position: absolute;
+    display: flex;
+    top: 20px;
+    left: -50px;
+    width: 500px;
+    max-height: 200px;
+    padding: 50px;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    background: $dark;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    transition: $transition_all;
+
+    &_active {
+        visibility: visible;
+        opacity: 1;
+        z-index: 2;
+
+        .sub-menu__item {
+            display: block;
+        }
+    }
+
+    &__item {
+        display: none;
+        margin: 5px 40px;
+    }
+}
+
+.section_banner {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-image: url(../assets/images/banners/banner.png);
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+}
+/*
+.banner {
+    display: flex;
+    padding: 7.5% 6.5% 7%;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+    &__text {
+        max-width: 50%;
+        text-align: center;
+    }
+
+    &__btn {
+        position: relative;
+        margin-top: 35px;
+
+        &::before {
+            @include before(50%,-100%);
+            display: block;
+            width: 100px;
+            height: 1px;
+            content: '';
+            background: linear-gradient(90deg, rgba(203,161,129,0.1), #cba181, rgba(203,161,129,0.1));
+        }
+
+        &::after {
+            @include before(50%,auto,-100%);
+            display: block;
+            width: 100px;
+            height: 1px;
+            content: '';
+            background: linear-gradient(90deg, rgba(203,161,129,0.1), #cba181, rgba(203,161,129,0.1));
+        }
+    }
+}
+
+.banners {
+    display: flex;
+    margin-bottom: 50px;
+
+    &__item {
+        position: relative;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    &__caption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding-top: 35px;
+        text-align: center;
+        z-index: 1;
+    }
+
+    &__text {
+        margin-bottom: 10px;
+    }
+
+    &__btn {
+        display: inline;
+        margin-top: 10px;
+        padding: 6px 14px;
+        border-radius: 50%;
+        border: 2px solid $gold;
+
+        span {
+            padding-right: 0;
+
+            &::after {
+                top: calc(50% - 5px);
+                left: calc(50% - 5px);
+                right: auto;
+            }
+        }
+    }
+}
+
+.section_middle {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-position: center;
+}
+
+.banner-middle {
+    display: flex;
+    margin-right: 13%;
+    justify-content: flex-end;
+
+    &__caption {
+        flex-basis: 35%;
+        text-align: center;
+    }
+
+    &__text {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+
+        &::before {
+            position: relative;
+            display: block;
+            height: 50px;
+            width: 1px;
+            content: '';
+            background: linear-gradient(rgba(203,161,129,0.1), #cba181, rgba(203,161,129,0.1));
+            margin-left: 50%;
+        }
+
+        &::after {
+            position: relative;
+            display: block;
+            height: 50px;
+            width: 1px;
+            content: '';
+            background: linear-gradient(rgba(203,161,129,0.1), #cba181, rgba(203,161,129,0.1));
+            margin-left: 50%;
+        }
+    }
+}
+
+.product {
+    display: flex;
+    width: 200%;
+    transition: $transition_all;
+
+    &-title {
+        position: relative;
+        display: inline-block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 50%;
+        font-size: 24px;
+        font-weight: normal;
+        color: $gold;
+        transform: translateX(-50%);
+
+        &::before {
+            @include before(50%,-80%);
+            display: block;
+            width: 100px;
+            height: 1px;
+            content: '';
+            background: linear-gradient(90deg, rgba(203,161,129,0.1), #cba181, rgba(203,161,129,0.1));
+        }
+
+        &::after {
+            @include before(50%,auto,-80%);
+            display: block;
+            width: 100px;
+            height: 1px;
+            content: '';
+            background: linear-gradient(90deg, rgba(203,161,129,0.1), #cba181, rgba(203,161,129,0.1));
+        }
+    }
+
+    &-slider {
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    &__item {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 15px;
+        flex-basis: calc(20% - 20px);
+        text-align: center;
+        cursor: pointer;
+    }
+
+    &__img {
+       background: $gray;
+    }
+
+    &__title {
+        margin-top: 14px;
+        letter-spacing: 0.01em;
+    }
+
+    &__price {
+        margin-top: 10px;
+        color: $gold;
+    }
+
+    &-dots {
+        display: flex;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        justify-content: center;
+        align-items: center;
+
+        &__item {
+            width: 10px;
+            height: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+            background: $base;
+            vertical-align: middle;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: $transition_all;
+
+            &_active {
+                width: 14px;
+                height: 14px;
+                background: $gold;
+            }
+        }
+    }
+}
+
+.banner-bottom {
+    display: flex;
+    margin-top: 20px;
+
+    &__item {
+        position: relative;
+        flex-basis: 50%;
+        overflow: hidden;
+        transition: $transition_all;
+
+        &:hover {
+           .banner-right {
+               transform: scale(1.05);
+               transition: $transition_all;
+           }
+        }
+    }
+
+    &__caption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    &__btn {
+        position: relative;
+        border-color: $black;
+
+        &:hover {
+            background: $black;
+            border-color: $black;
+
+            span {
+               color: $white;
+            }
+        }
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: -100%;
+            display: block;
+            width: 100px;
+            height: 1px;
+            content: '';
+            background: linear-gradient(90deg, rgba(0,0,0,0.1), #000, rgba(0,0,0,0.1));
+        }
+
+        &::after {
+            position: absolute;
+            top: 50%;
+            right: -100%;
+            display: block;
+            width: 100px;
+            height: 1px;
+            content: '';
+            background: linear-gradient(90deg, rgba(0,0,0,0.1), #000, rgba(0,0,0,0.1));
+        }
+        span {
+
+            &::after {
+                border-color: $black;
+            }
+        }
+    }
+}
+*/
+.footer {
+    
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 100;
+    opacity: 0;
+    transition: $transition_all;
+
+    &_show {
+        visibility: visible;
+        opacity: 1;
+    } 
+    
+    &-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $gray;
+        opacity: .81;
+    }
+
+    &-wrap {
+        position: absolute;
+        display: block;
+        width: 320px;
+        max-width: 100%;
+        top: 50%;
+        right: 0;
+        left: 0;
+        margin: auto;
+        z-index: 10;
+        transform: translateY(-50%);
+        text-align: center;
+    }
+
+    &-content {
+       display: flex;
+        
+    }
+
+    &__img {
+        
+    }
+
+    &__title {
+        
+    }
+
+    &__text {
+        
+    }
+
+    &__btn {
+        
+    }
+
+    &__close {
+        
+    }
+
+    &-close {
+        
+    }
+}

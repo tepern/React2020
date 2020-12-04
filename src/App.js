@@ -1,5 +1,8 @@
 import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './App.scss';
+import Banner from './components/Banner';
+import HeaderMenu from './components/HeaderMenu';
 
 function App() {
   return (
@@ -17,7 +20,9 @@ function App() {
         >
           Learn React
         </a>
+        <HeaderMenu/>
       </header>
+      <Banner />
     </div>
   );
 }

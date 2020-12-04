@@ -1,0 +1,38 @@
+@font-face {
+    font-family: JosefinSans;
+    src: url('../fonts/JosefinSans/JosefinSans-Regular.eot');
+    src: url('../fonts/JosefinSans/JosefinSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/JosefinSans/JosefinSans-Regular.woff2') format('woff2'),
+        url('../fonts/JosefinSans/JosefinSans-Regular.woff') format('woff'),
+        url('../fonts/JosefinSans/JosefinSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: JosefinSans;
+    src: url('../fonts/JosefinSans/JosefinSans-Italic.eot');
+    src: url('../fonts/JosefinSans/JosefinSans-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/JosefinSans/JosefinSans-Italic.woff2') format('woff2'),
+        url('../fonts/JosefinSans/JosefinSans-Italic.woff') format('woff'),
+        url('../fonts/JosefinSans/JosefinSans-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: Italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: JosefinSans;
+    src: url('../fonts/JosefinSans/JosefinSans-Bold.eot');
+    src: url('../fonts/JosefinSans/JosefinSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/JosefinSans/JosefinSans-Bold.woff2') format('woff2'),
+        url('../fonts/JosefinSans/JosefinSans-Bold.woff') format('woff'),
+        url('../fonts/JosefinSans/JosefinSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
