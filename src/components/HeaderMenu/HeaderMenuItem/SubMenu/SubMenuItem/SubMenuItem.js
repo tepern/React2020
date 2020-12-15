@@ -5,7 +5,7 @@ export default class SubMenuItem extends Component {
 
        return (
             <li class="sub-menu__item">
-                <a class-"sub-menu__link"></a>
+                <a class="sub-menu__link">{this.props.name}</a>
             </li>
         );
     }

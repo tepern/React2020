@@ -1,0 +1,46 @@
+@import "../../styles/partial/variables.scss";
+
+.header-menu {
+    display: flex;
+    justify-content: center;
+
+    &__item {
+        position: relative;
+        margin: 0 19px;
+    }
+
+    &__link {
+       position: relative;
+       text-align: center;
+
+       &_active {
+           color: $gold;
+
+            &::before {
+                left: 0;
+                width: 100%;
+                transition: $transition_all;
+            }
+       }
+
+       &::before {
+           position: absolute;
+           top: auto;
+           lift: 50%;
+           bottom: -4px;
+           width: 0;
+           height: 2px; 
+           background: $gold;
+           transition: $transition_all;
+       }
+
+        &:hover {
+            color: $gold;
+
+            &::before {
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -56,3 +56,6 @@
 [1125/045641.189:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
 [1125/045641.399:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
 [1204/143539.508:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[1204/192906.576:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[1208/173103.829:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[1214/162857.598:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)

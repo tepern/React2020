@@ -1,0 +1,97 @@
+@import "../../styles/partial/variables.scss";
+
+.product {
+    display: flex;
+    width: 200%;
+    transition: $transition_all;
+
+    &-title {
+        position: relative;
+        display: inline-block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 50%;
+        font-size: 24px;
+        font-weight: normal;
+        color: $gold;
+        transform: translateX(-50%);
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: -80%;
+            display: block;
+            width: 100px;
+            height: 1px;
+            content: '';
+            background: linear-gradient(90deg, rgba(203,161,129,0.1), #cba181, rgba(203,161,129,0.1));
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 50%;
+            right: -80%;
+            display: block;
+            width: 100px;
+            height: 1px;
+            content: '';
+            background: linear-gradient(90deg, rgba(203,161,129,0.1), #cba181, rgba(203,161,129,0.1));
+        }
+    }
+
+    &-slider {
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    &__item {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 15px;
+        flex-basis: calc(20% - 20px);
+        text-align: center;
+        cursor: pointer;
+    }
+
+    &__img {
+       background: $gray;
+    }
+
+    &__title {
+        margin-top: 14px;
+        letter-spacing: 0.01em;
+    }
+
+    &__price {
+        margin-top: 10px;
+        color: $gold;
+    }
+
+    &-dots {
+        display: flex;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        justify-content: center;
+        align-items: center;
+
+        &__item {
+            width: 10px;
+            height: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+            background: $base;
+            vertical-align: middle;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: $transition_all;
+
+            &_active {
+                width: 14px;
+                height: 14px;
+                background: $gold;
+            }
+        }
+    }
+}

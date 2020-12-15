@@ -1,0 +1,44 @@
+
+.section_middle {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-position: center;
+    background-image: url(/assets/images/banners/ban_middle.png.jpg);
+}
+
+.banner-middle {
+    display: flex;
+    margin-right: 13%;
+    justify-content: flex-end;
+
+    &__caption {
+        flex-basis: 35%;
+        text-align: center;
+    }
+
+    &__text {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+
+        &::before {
+            position: relative;
+            display: block;
+            height: 50px;
+            width: 1px;
+            content: '';
+            background: linear-gradient(rgba(203,161,129,0.1), #cba181, rgba(203,161,129,0.1));
+            margin-left: 50%;
+        }
+
+        &::after {
+            position: relative;
+            display: block;
+            height: 50px;
+            width: 1px;
+            content: '';
+            background: linear-gradient(rgba(203,161,129,0.1), #cba181, rgba(203,161,129,0.1));
+            margin-left: 50%;
+        }
+    }
+}
