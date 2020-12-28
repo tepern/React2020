@@ -36,11 +36,11 @@ export default class Catalog extends Component {
        
        return (
         
-        <section class="section">
-            <div class="container">
+        <section class="section section_padding_top">
+            <div class="catalog-container">
                 <div class="product-title">Products</div>
                 <div class="product-slider">
-                    <div class="product" id="products">
+                    <div class="product-list" id="products">
                         {products.map(function(item) { 
                           if(collection){
                             if(item.Collections.includes(collection)) {

@@ -1,19 +1,25 @@
 @import "../../styles/partial/variables.scss";
 
 .section {
-    padding-top: 200px;
+   
+   &_padding_top {
+       padding-top: 200px;
+   }
 }
 
-.container {
+.catalog-container {
     width: 1200px;
 }
 
 .product {
-    display: flex;
-    max-width: 100%;
-    flex-wrap: wrap;
-    transition: $transition_all;
-
+    
+    &-list {
+        display: flex;
+        max-width: 100%;
+        flex-wrap: wrap;
+        transition: $transition_all;
+    }
+    
     &-title {
         position: relative;
         display: block;

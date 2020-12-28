@@ -26,10 +26,11 @@
        &::before {
            position: absolute;
            top: auto;
-           lift: 50%;
+           left: 50%;
            bottom: -4px;
            width: 0;
            height: 2px; 
+           content: "";
            background: $gold;
            transition: $transition_all;
        }

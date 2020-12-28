@@ -3,6 +3,7 @@
 .product {
     display: flex;
     width: 200%;
+    flex-wrap: nowrap;
     transition: $transition_all;
 
     &-title {

@@ -1,5 +1,8 @@
 @import "../../styles/partial/variables.scss";
 
 .section {
-    padding-top: 200px;
+   
+   &_padding_top {
+       padding-top: 200px;
+   }
 }
