@@ -1,0 +1,71 @@
+@import "../../styles/partial/variables.scss";
+
+.banner-bottom {
+    display: flex;
+    margin-top: 20px;
+
+    &__item {
+        position: relative;
+        flex-basis: 50%;
+        overflow: hidden;
+        transition: $transition_all;
+
+        &:hover {
+           .banner-right {
+               transform: scale(1.05);
+               transition: $transition_all;
+           }
+        }
+    }
+
+    &__caption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    &__btn {
+        position: relative;
+        border-color: $black;
+
+        &:hover {
+            background: $black;
+            border-color: $black;
+
+            span {
+               color: $white;
+            }
+        }
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: -100%;
+            display: block;
+            width: 100px;
+            height: 1px;
+            content: '';
+            background: linear-gradient(90deg, rgba(0,0,0,0.1), #000, rgba(0,0,0,0.1));
+        }
+
+        &::after {
+            position: absolute;
+            top: 50%;
+            right: -100%;
+            display: block;
+            width: 100px;
+            height: 1px;
+            content: '';
+            background: linear-gradient(90deg, rgba(0,0,0,0.1), #000, rgba(0,0,0,0.1));
+        }
+        span {
+
+            &::after {
+                border-color: $black;
+            }
+        }
+    }
+}

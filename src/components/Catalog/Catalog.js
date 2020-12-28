@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import Product from './Product';
+import { withRouter } from "react-router";
+
+import Product from '../Products/Product';
+import Header from '../Header';
 import img1 from '../../assets/images/products/1.png';
 import img2 from '../../assets/images/products/2.png';
 import img3 from '../../assets/images/products/3.png';
@@ -24,47 +27,35 @@ const products = [ { No: '1', SKU: "327038", name: 'Tommy Hilfiger Blue Ion Plat
 ];
 
 
-export default class Products extends Component {
-
-    constructor(props) {
-      super(props);
-
-      this.state = {
-          index: 1
-      };
-
-      this.sliderItemActive = this.sliderItemActive.bind(this);
-    }
-
-    componentDidUpdate() {
-       
-    }
-
-    sliderItemActive(dataIndex) {
-        this.setState((state,props)=>({index: dataIndex}));
-        
-        console.log(this.state.isActive);
-    }
+export default class Catalog extends Component {
+  
+    
 
     render() {
-        
-        const trans = {
-            transform: 'translate3d(' + (this.state.index-1)*(-10) + '%, 0px,0px)'};
+       const collection = this.props.match.params.collection;
        
        return (
+        
         <section class="section">
             <div class="container">
-                <div class="product-title">Shop Best Sellers</div>
+                <div class="product-title">Products</div>
                 <div class="product-slider">
-                    <div class="product" id="products" style={ trans }>
-                        {products.map(item => <Product name={item.name} price={item.price} img={item.img}></Product>)}
+                    <div class="product" id="products">
+                        {products.map(function(item) { 
+                          if(collection){
+                            if(item.Collections.includes(collection)) {
+                              return <Product name={item.name} price={item.price} img={item.img}></Product>
+                            }
+                          } else {
+                            return <Product name={item.name} price={item.price} img={item.img}></Product>
+                          }
+                         } 
+                        )}
                     </div>
-                    <div class="product-dots" id="pagination">
-                        {products.map(item => <span className={`product-dots__item ${this.state.index == item.No ? ' product-dots__item_active' : ''}`} onClick={() => this.sliderItemActive(item.No)} dataIndex = { item.No }></span>).splice(-products.length,5)}
-                    </div> 
                 </div>
             </div>
-        </section>)
+        </section>
+        )
         
 
     } 

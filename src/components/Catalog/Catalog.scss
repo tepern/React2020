@@ -1,0 +1,63 @@
+@import "../../styles/partial/variables.scss";
+
+.section {
+    padding-top: 200px;
+}
+
+.container {
+    width: 1200px;
+}
+
+.product {
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    transition: $transition_all;
+
+    &-title {
+        position: relative;
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: normal;
+        color: $gold;
+        text-align: center;
+
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &-slider {
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    &__item {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 15px;
+        flex-basis: calc(33% - 20px);
+        text-align: center;
+        cursor: pointer;
+    }
+
+    &__img {
+       background: $gray;
+    }
+
+    &__title {
+        margin-top: 14px;
+        letter-spacing: 0.01em;
+    }
+
+    &__price {
+        margin-top: 10px;
+        color: $gold;
+    }
+}

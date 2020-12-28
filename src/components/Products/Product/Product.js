@@ -19,10 +19,10 @@ export default class Product extends Component {
 
        return (
             <div class="product__item">
-                <div class="product__title">{this.props.name}</div>
                 <div class="product__img">
-                    <img src={img1}></img>
+                    <img src={this.props.img}></img>
                 </div>
+                <div class="product__title">{this.props.name}</div>
                 <p class="product__price">${this.props.price}</p>
             </div>
         );
