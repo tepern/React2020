@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import HeaderMenu from './HeaderMenu';
+import ToggleTheme from './ToggleTheme';
 import logo from '../../assets/images/logo.png';
-
+import { ThemeContext } from '../../theme-context/ThemeContext';
 
 export default class Header extends Component {
     
@@ -33,18 +34,23 @@ export default class Header extends Component {
 }
 
 render() {
-
+  return (
+    <ThemeContext.Consumer>{(context) => {
+      const theme = !context.lightTheme ? '' : ' lightmode';
+      console.log(theme);
         return (
-            <header className={this.state.class}>
+            <header className={this.state.class + theme}>
                 <div class="header-top">
                   <div class="header-logo">
-                    <img class="header__logo" src={ logo }></img>
+                    <img class="header__logo" src={ logo } alt=""></img>
                   </div>
                 </div>
                 <HeaderMenu/>
+                <ToggleTheme />
             </header>
         );
-
+    }}</ThemeContext.Consumer>    
+  )
        
     } 
 }
