@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ThemeContext } from '../../theme-context/ThemeContext';
 import Product from './Product';
 import img1 from '../../assets/images/products/1.png';
 import img2 from '../../assets/images/products/2.png';
@@ -50,22 +51,25 @@ export default class Products extends Component {
         
         const trans = {
             transform: 'translate3d(' + (this.state.index-1)*(-10) + '%, 0px,0px)'};
-       
-       return (
-        <section class="section">
-            <div class="container">
-                <div class="product-title">Shop Best Sellers</div>
-                <div class="product-slider">
-                    <div class="product" id="products" style={ trans }>
-                        {products.map(item => <Product name={item.name} price={item.price} img={item.img}></Product>)}
-                    </div>
-                    <div class="product-dots" id="pagination">
-                        {products.map(item => <span className={`product-dots__item ${this.state.index == item.No ? ' product-dots__item_active' : ''}`} onClick={() => this.sliderItemActive(item.No)} dataIndex = { item.No }></span>).splice(-products.length,5)}
-                    </div> 
-                </div>
-            </div>
-        </section>)
-        
-
+        return (
+            <ThemeContext.Consumer>{(context) => {
+                const theme = !context.lightTheme ? '' : ' lightmode';
+                return (
+                    <section className={`section`+ theme}>
+                        <div class="container">
+                            <div class="product-title">Shop Best Sellers</div>
+                            <div class="product-slider">
+                                <div class="product" id="products" style={ trans }>
+                                    {products.map(item => <Product name={item.name} price={item.price} img={item.img}></Product>)}
+                                </div>
+                                <div class="product-dots" id="pagination">
+                                    {products.map(item => <span className={`product-dots__item ${this.state.index == item.No ? ' product-dots__item_active' : ''}`} onClick={() => this.sliderItemActive(item.No)} dataIndex = { item.No }></span>).splice(-products.length,5)}
+                                </div> 
+                            </div>
+                        </div>
+                    </section>
+                );
+            }}</ThemeContext.Consumer>
+        )
     } 
 }

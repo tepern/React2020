@@ -1,1 +1,0 @@
-export { ThemeConsumer } from './ThemeConsumer';

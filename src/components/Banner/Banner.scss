@@ -1,8 +1,37 @@
+@import "../../styles/partial/variables.scss";
+
 .section_banner {
     padding-top: 200px;
     padding-bottom: 200px;
     background-image: url(/assets/images/banners/banner.png);
     background-position: 50% 0%;
+
+    &.lightmode {
+        filter: invert(1);
+
+        .banner__text {
+            color: $base;
+        }
+
+        .banner__btn {
+
+            span {
+                color: $white;
+            }
+
+            &:hover {
+
+                span {
+                    color: $dark;
+
+                    &::after{
+                        border-left: 1px solid $black;
+                        border-top: 1px solid $black;
+                    }
+                }
+            }   
+        }
+    }
 }
 
 .banner {

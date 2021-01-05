@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { withRouter } from "react-router";
+import { ThemeContext } from '../../theme-context/ThemeContext';
 
 import Product from '../Products/Product';
-import Header from '../Header';
+
 import img1 from '../../assets/images/products/1.png';
 import img2 from '../../assets/images/products/2.png';
 import img3 from '../../assets/images/products/3.png';
@@ -32,31 +32,34 @@ export default class Catalog extends Component {
     
 
     render() {
-       const collection = this.props.match.params.collection;
-       
-       return (
-        
-        <section class="section section_padding_top">
-            <div class="catalog-container">
-                <div class="product-title">Products</div>
-                <div class="product-slider">
-                    <div class="product-list" id="products">
-                        {products.map(function(item) { 
-                          if(collection){
-                            if(item.Collections.includes(collection)) {
-                              return <Product name={item.name} price={item.price} img={item.img}></Product>
-                            }
-                          } else {
-                            return <Product name={item.name} price={item.price} img={item.img}></Product>
-                          }
-                         } 
-                        )}
-                    </div>
-                </div>
-            </div>
-        </section>
+      const collection = this.props.match.params.collection;
+        return ( 
+          <ThemeContext.Consumer>{(context) => {
+            const theme = !context.lightTheme ? '' : ' lightmode'; 
+            return (
+              
+              <section className={`section section_padding_top section_padding_bottom`+ theme}>
+                  <div class="catalog-container">
+                      <div class="product-title">Products</div>
+                      <div class="product-slider">
+                          <div class="product-list" id="products">
+                              {products.map(function(item) { 
+                                if(collection){
+                                  if(item.Collections.includes(collection)) {
+                                    return <Product name={item.name} price={item.price} img={item.img}></Product>
+                                  }
+                                } else {
+                                  return <Product name={item.name} price={item.price} img={item.img}></Product>
+                                }
+                               } 
+                              )}
+                          </div>
+                      </div>
+                  </div>
+              </section>
+              );
+            }}
+          </ThemeContext.Consumer>
         )
-        
-
     } 
 }

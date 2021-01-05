@@ -44,9 +44,9 @@ render() {
                   <div class="header-logo">
                     <img class="header__logo" src={ logo } alt=""></img>
                   </div>
+                  <ToggleTheme />
                 </div>
                 <HeaderMenu/>
-                <ToggleTheme />
             </header>
         );
     }}</ThemeContext.Consumer>    

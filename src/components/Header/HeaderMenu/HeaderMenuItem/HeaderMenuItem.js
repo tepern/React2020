@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 //import topMenu from '../HeaderMenu';
 import SubMenu from './SubMenu';
 
@@ -29,7 +29,9 @@ export default class HeaderMenuItem extends Component {
 
        return (
             <li class="header-menu__item" onMouseEnter={this.itemActive} onMouseLeave={this.itemNoActive}>
-                {this.props.items.length==0?<Link to={this.props.name} className={this.state.class}>{this.props.name}</Link>:<a className={this.state.class}>{this.props.name}</a>
+                {this.props.items.length===0?
+                  <Link to={`/${this.props.name}`} className={this.state.class}>{this.props.name}</Link>:
+                  <a className={this.state.class}>{this.props.name}</a>
                 }
                 {this.props.items.length>0&&
                     <SubMenu item parentItem={this.props.name} items={this.props.items} subMenuClass={this.state.subMenuClass} visible={this.state.visible}></SubMenu>

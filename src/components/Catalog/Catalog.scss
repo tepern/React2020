@@ -2,13 +2,20 @@
 
 .section {
    
-   &_padding_top {
+    &_padding_top {
        padding-top: 200px;
-   }
+    }
+
+    &_padding_bottom {
+       padding-bottom: 500px;
+    }
 }
 
 .catalog-container {
     width: 1200px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .product {
@@ -23,7 +30,7 @@
     &-title {
         position: relative;
         display: block;
-        margin-top: 20px;
+        margin-top: 40px;
         margin-bottom: 20px;
         font-size: 24px;
         font-weight: normal;

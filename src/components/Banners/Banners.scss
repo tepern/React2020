@@ -2,6 +2,7 @@
 
 .banners {
     display: flex;
+    margin-top: 30px;
     margin-bottom: 50px;
 
     &__item {
@@ -39,6 +40,17 @@
                 left: calc(50% - 5px);
                 right: auto;
             }
+        }
+    }
+}
+
+.section.lightmode {
+    background-color: $white;
+
+    .banners__item {
+
+        img {
+            filter: invert(1);
         }
     }
 }
