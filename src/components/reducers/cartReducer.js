@@ -9,7 +9,7 @@ import img8 from '../../assets/images/products/8.png';
 import img9 from '../../assets/images/products/9.png';
 import img10 from '../../assets/images/products/10.png';
 
-import { ADD_TO_CART } from '../actions/action-types/cart-actions';
+import { ADD_TO_CART,REMOVE_ITEM,CHANGE_QUANTITY } from '../actions/action-types/cart-actions';
 
 /*const products = [ { No: '1', SKU: "327038", name: 'Tommy Hilfiger Blue Ion Plated Ladies Watch', price: '67', oldPrice: '88', discount: '22%', description: 'Tick tock. You’ll never wonder what time it is again when you browse through all watches, including designer brands like Gucci, Daniel Wellington. From stainless steel and ceram...', vendor: 'Emporio Armani', type: 'Diving', barcode: '555-6322-1', weight: '32.6 kg', tags: [ 'Activity' ], Collections: ['Ladies','Sale'], img: img1, images: ['1.1.png','1.2.png','1.3.png','1.4.png','1.5.png'], reviews: [] },
 { No: '2',SKU: "327038", name: 'Olivia Burton Glasshouse Rose Gold Plated Mesh Ladies Watch', price: '20', oldPrice: '22', discount: '9%', description: 'Our vast range of sports watches includes popular brands, such as Casio, G-Shock and Citizen, all packed with the special features any budding sportsman could need. If it’s vers... ', vendor: 'Gucci', type: 'Diving', barcode: '555-6322-1', weight: '32.6 kg', tags: [ 'Activity' ], Collections: ['Accessories', 'Kids’','Ladies','Luxury','Sale','Sport'], img: img2, images: ['2.1.png','2.2.png','2.3.png','2.4.png','2.5.png'], reviews: [] },
@@ -59,9 +59,24 @@ const cartReducer = (state = initState,action) => {
                 total: newTotal
             }
         }
-    } else {
-        return state;
+    } 
+
+    if(action.type === REMOVE_ITEM){
+        const itemToRemove = state.addedItems.find(item => action.id === item.id)
+        const new_items = state.addedItems.filter(item => action.id !== item.id)
+        
+        const newTotal = state.total - (itemToRemove.price * itemToRemove.quantity )
+        console.log(itemToRemove)
+        return {
+            ...state,
+            addedItems: new_items,
+            total: newTotal
+        }
     }
+
+        
+    return state;
+    
     
 }
 

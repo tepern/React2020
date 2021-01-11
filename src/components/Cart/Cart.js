@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import { ThemeContext } from '../../theme-context/ThemeContext';
 import { connect } from 'react-redux';
+import { removeItem } from '../actions/cartActions';
 
 class Cart extends Component {
 
+  constructor(props) {
+    super(props);
+    this.amountInput = React.createRef();
+  }
+
+  handleRemove = (id) => {
+    this.props.removeItem(id);
+  }
+
+
   render() {
     const addedProducts = this.props.items; 
-    console.log(addedProducts);
+    
     return (
         <ThemeContext.Consumer>{(context) => {
             const theme = !context.lightTheme ? '' : ' lightmode';  
@@ -18,32 +29,30 @@ class Cart extends Component {
                           { 
                             addedProducts.map(item => {
                                 
-                                    return (
+                              return (
 
-                                      <div className = "cart__item">
-                                        <div class="cart__img">
-                                          <img src={item.img} alt="" />
-                                        </div>
-                                        <div class="cart__content">
-                                           <p class="cart__title">{item.name}</p>
-                                           <p class="cart__price">${item.price}</p>
-                                        </div>
-                                        <div className="cart__quantity">
-                                            <span>Quantity</span>
-                                            <p class="cart-quantity">{item.quantity}</p>
-                                        </div>
-                                        <div class="cart__sum"></div>
-                                        <div className="cart-remove">
-                                           <button className="cart__remove"></button>
-                                        </div>
-                                      </div>
-                                    )  
-                                   }   
-                                    )
+                                <div className = "cart__item">
+                                  <div class="cart__img">
+                                    <img src={item.img} alt="" />
+                                  </div>
+                                  <div class="cart__content">
+                                     <p class="cart__title">{item.name}</p>
+                                     <p class="cart__price">${item.price}</p>
+                                  </div>
+                                  <div className="cart__quantity">
+                                      <span>Quantity</span>
+                                      <p class="cart-quantity">{item.quantity}</p>
+                                  </div>
+                                  <div class="cart__sum">${item.quantity*item.price}</div>
+                                  <div className="cart-remove">
+                                     <button className="cart__remove" onClick={()=>{this.handleRemove(item.id)}}></button>
+                                  </div>
+                                </div>
+                              )  
+                             }   
+                            )
 
-                                    
-                               
-                                }
+                          }
                       </div>      
                   </div>
               </section>
@@ -59,4 +68,11 @@ const mapStateToProps = (state)=>{
     }
 }
 
-export default connect(mapStateToProps)(Cart)
+const mapDispatchToProps = (dispatch) => {
+    return{
+      removeItem: (id) => {dispatch(removeItem(id))}
+      
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Cart)
