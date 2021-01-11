@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { ThemeContext } from '../../theme-context/ThemeContext';
+import { connect } from 'react-redux';
+import { addToCart } from '../actions/cartActions';
 
 import Product from '../Products/Product';
 
-import img1 from '../../assets/images/products/1.png';
+/*import img1 from '../../assets/images/products/1.png';
 import img2 from '../../assets/images/products/2.png';
 import img3 from '../../assets/images/products/3.png';
 import img4 from '../../assets/images/products/4.png';
@@ -24,14 +26,15 @@ const products = [ { No: '1', SKU: "327038", name: 'Tommy Hilfiger Blue Ion Plat
 { No: '8',SKU: "327AE-6", name: 'Gucci Plexiglass Fashion Ladies Watch', price: '80', oldPrice: '', discount: '', description: 'Our vast range of sports watches includes popular brands, such as Casio, G-Shock and Citizen, all packed with the special features any budding sportsman could need. If it’s vers... ', vendor: 'Gucci', type: 'Vintage', barcode: '327038522', weight: '-', tags: [ 'Chronograph' ], Collections: ['Accessories','Kids’','Luxury','Men’s','Sale','Sport','Unisex','Vintage'], img: img8, images: ['7.8.png','7.8.png','7.8.png','7.8.png','7.8.png'], reviews: [] },
 { No: '9',SKU: "327038", name: 'Emporio Armani Rose Gold Tone Mens Watch', price: '80', oldPrice: '88', discount: '9%', description: 'Tick tock. You’ll never wonder what time it is again when you browse through all watches, including designer brands like Gucci, Daniel Wellington. From stainless steel and ceram... ', vendor: 'Emporio Armani', type: 'Diving', barcode: '555-6322-1', weight: '32.6 kg', tags: [ 'Activity' ], Collections: ['Accessories','Men’s','Sale','Sport','Unisex','Vintage'], img: img9, images: ['9.1.png','9.2.png','9.3.png','9.4.png','9.5.png'], reviews: [] },
 { No: '10',SKU: "327AE-6", name: 'Emporio Armani Mens Watch', price: '119', oldPrice: '', discount: '', description: 'Solar watches are another option for those who want to energize their watch collection. Powered by a solar panel, these watches are environmentally friendly and ideal for the se...', vendor: 'Emporio Armani', type: 'Vintage', barcode: '327038522', weight: '-', tags: [ 'Chronograph' ], Collections: ['Men’s','Sale','Unisex','Vintage'], img: img10, images: ['10.1.png','10.2.png','10.3.png','10.4.png','10.5.png'], reviews: [] }
-];
+];*/
 
 
-export default class Catalog extends Component {
+class Catalog extends Component {
   
     
 
     render() {
+      const products = this.props.items;
       const collection = this.props.match.params.collection;
         return ( 
           <ThemeContext.Consumer>{(context) => {
@@ -40,16 +43,16 @@ export default class Catalog extends Component {
               
               <section className={`section section_padding_top section_padding_bottom`+ theme}>
                   <div class="catalog-container">
-                      <div class="product-title">Products</div>
+                      <div class="product-title product-title_catalog">Products</div>
                       <div class="product-slider">
                           <div class="product-list" id="products">
                               {products.map(function(item) { 
                                 if(collection){
                                   if(item.Collections.includes(collection)) {
-                                    return <Product name={item.name} price={item.price} img={item.img}></Product>
+                                    return <Product id={item.No} name={item.name} price={item.price} img={item.img}></Product>
                                   }
                                 } else {
-                                  return <Product name={item.name} price={item.price} img={item.img}></Product>
+                                  return <Product id={item.No} name={item.name} price={item.price} img={item.img}></Product>
                                 }
                                } 
                               )}
@@ -63,3 +66,11 @@ export default class Catalog extends Component {
         )
     } 
 }
+
+const mapStateToProps = (state) => {
+    return {
+        items: state.items
+    }
+}
+
+export default connect(mapStateToProps)(Catalog)

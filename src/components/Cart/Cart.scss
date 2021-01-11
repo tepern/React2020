@@ -1,0 +1,80 @@
+@import "../../styles/partial/variables.scss";
+
+.section {
+   
+   &_padding_top {
+       padding-top: 200px;
+   }
+
+    &_padding_bottom {
+       padding-bottom: 500px;
+    }
+}
+
+.cart {
+    border-top: 2px solid $gold;
+    width: 900px;
+    max-width: 100%;
+
+    &-container {
+        width: 1200px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    &-title {
+        position: relative;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        font-size: 24px;
+        font-weight: normal;
+        color: $gold;
+        text-align: center;
+    }
+
+    &__item {
+       display: flex;
+       padding: 20px 20px;
+       align-items: center;
+       border-bottom: 2px solid $gold;
+    }
+
+    &__img {
+       padding-right: 20px;
+       flex-basis: 170px;
+    }
+
+    &__content {
+        padding-left: 20px;
+        flex-basis: 290px;
+    }
+
+    &__quantity {
+        flex-basis: 264px;
+
+        span {
+            opacity: 0.5;
+        }
+    }
+
+    &__price {
+        flex-basis: 264px;
+        color: $gold;
+    }
+
+    &__sum {
+        flex-basis: 97px;
+    }
+
+    &-remove {
+        flex-basis: 33px;
+    }
+
+    &__remove {
+        width: 25px;
+        height: 30px;
+        background: url(/assets/images/remove-gold.svg) no-repeat;
+        border: none;
+    }
+}

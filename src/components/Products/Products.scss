@@ -48,12 +48,20 @@
     }
 
     &__item {
+        position: relative;
         margin-left: 10px;
         margin-right: 10px;
         padding-top: 15px;
         flex-basis: calc(20% - 20px);
         text-align: center;
         cursor: pointer;
+
+        &:hover {
+            .product-button {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
     }
 
     &__img {
@@ -94,6 +102,47 @@
                 background: $gold;
             }
         }
+    }
+
+    &-button {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        transform: translateY(-50%);
+        transition: $transition_all;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &__btn {
+        height: 46px;
+        margin-top: 0;
+        padding-left: 50px;
+        background-image: url(/assets/images/cart-gold.svg);
+        background-color: rgba($black,0.5);
+        background-repeat: no-repeat;
+        background-position-y: 10px;
+        background-position-x: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $gold;
+        border-radius: 2px;
+        border: 2px solid $gold;
+        transition: $transition_all;
+
+        &:hover {
+            background-image: url(/assets/images/cart.svg);
+            background-color: $gold;
+            background-repeat: no-repeat;
+            background-position-y: 10px;
+            background-position-x: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: $dark;
+        }
+
     }
 }
 

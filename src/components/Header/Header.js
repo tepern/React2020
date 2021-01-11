@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HeaderMenu from './HeaderMenu';
+import { Link } from "react-router-dom";
 import ToggleTheme from './ToggleTheme';
 import logo from '../../assets/images/logo.png';
 import { ThemeContext } from '../../theme-context/ThemeContext';
@@ -45,6 +46,7 @@ render() {
                     <img class="header__logo" src={ logo } alt=""></img>
                   </div>
                   <ToggleTheme />
+                  <Link to="/Cart" class="header__cart"><span>Cart</span></Link>
                 </div>
                 <HeaderMenu/>
             </header>

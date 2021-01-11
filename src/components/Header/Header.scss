@@ -27,4 +27,29 @@
         position: relative;
         text-align: center;
     }
+
+    &__cart {
+       position: absolute;
+       top: 70px;
+       right: 30px; 
+       padding-right: 50px;
+
+        &:hover {
+           color: $gold;
+        }
+
+        span {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                right: -30px;
+                content: "";
+                width: 20px;
+                height: 20px;
+                background-image: url(/assets/images/cart-gold.svg);
+            }
+
+        }
+    }
 }
