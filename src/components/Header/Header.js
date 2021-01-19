@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import ToggleTheme from './ToggleTheme';
 import logo from '../../assets/images/logo.png';
 import { ThemeContext } from '../../theme-context/ThemeContext';
+import { connect } from 'react-redux';
 
-export default class Header extends Component {
+class Header extends Component {
     
   constructor(props) {
       super(props);
@@ -35,18 +36,22 @@ export default class Header extends Component {
 }
 
 render() {
+  const inCart = this.props.items.length;
+  
   return (
     <ThemeContext.Consumer>{(context) => {
       const theme = !context.lightTheme ? '' : ' lightmode';
-      console.log(theme);
+      
         return (
             <header className={this.state.class + theme}>
                 <div class="header-top">
                   <div class="header-logo">
-                    <img class="header__logo" src={ logo } alt=""></img>
+                    <Link to="/">
+                      <img class="header__logo" src={ logo } alt="" />
+                    </Link>
                   </div>
                   <ToggleTheme />
-                  <Link to="/Cart" class="header__cart"><span>Cart</span></Link>
+                  <Link to="/Cart" class="header__cart"><span class="shopping-cart">Cart</span><span class="products-in-cart">{inCart}</span></Link>
                 </div>
                 <HeaderMenu/>
             </header>
@@ -56,3 +61,11 @@ render() {
        
     } 
 }
+
+const mapStateToProps = (state) => {
+    return {
+        items: state.addedItems
+    }
+}
+
+export default connect(mapStateToProps)(Header)

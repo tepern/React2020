@@ -30,26 +30,35 @@
 
     &__cart {
        position: absolute;
-       top: 70px;
-       right: 30px; 
-       padding-right: 50px;
+       top: 70px; 
+       right: 30px;
 
         &:hover {
            color: $gold;
         }
-
-        span {
-            position: relative;
-
-            &::after {
-                position: absolute;
-                right: -30px;
-                content: "";
-                width: 20px;
-                height: 20px;
-                background-image: url(/assets/images/cart-gold.svg);
-            }
-
-        }
     }
+}
+
+.shopping-cart {
+    position: relative;
+    padding-right: 40px;
+
+    &::after {
+        position: absolute;
+        right: 10px;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-image: url(/assets/images/cart-gold.svg);
+    }
+}
+
+.products-in-cart {
+    display: inline-block;
+    padding: 1px 5px;
+    font-size: 12px;
+    color: black;
+    background: $gold;
+    border-radius: 5px 5px 5px 0;
+    vertical-align: 5px;
 }

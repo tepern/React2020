@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ThemeContext } from '../../theme-context/ThemeContext';
 import { connect } from 'react-redux';
-import { removeItem } from '../actions/cartActions';
+import { removeItem } from '../../store/actions/cartActions';
 
 class Cart extends Component {
 
@@ -45,14 +45,17 @@ class Cart extends Component {
                                   </div>
                                   <div class="cart__sum">${item.quantity*item.price}</div>
                                   <div className="cart-remove">
-                                     <button className="cart__remove" onClick={()=>{this.handleRemove(item.id)}}></button>
+                                     <button className="cart__remove" onClick={()=>{this.handleRemove(item.No)}}></button>
                                   </div>
                                 </div>
                               )  
                              }   
                             )
-
                           }
+                      </div>
+                      <div className="cart-total">
+                        <p>Total price</p>
+                        <p class="title">${ this.props.total }</p>
                       </div>      
                   </div>
               </section>
@@ -64,7 +67,8 @@ class Cart extends Component {
 
 const mapStateToProps = (state)=>{
     return{
-        items: state.addedItems
+        items: state.addedItems,
+        total: state.total
     }
 }
 

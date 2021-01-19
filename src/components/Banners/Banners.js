@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import { ThemeContext } from '../../theme-context/ThemeContext';
 import ban_1 from '../../assets/images/banners/ban_1.jpg';
 import ban_2 from '../../assets/images/banners/ban_2.jpg';
@@ -14,27 +15,27 @@ export default class Banners extends Component {
                         <div class="container">
                             <div class="banners">
                                 <div class="banners__item">
-                                    <img src={ban_1} alt=""></img>
+                                    <img src={ban_1} alt="" />
                                     <div class="banners__caption">
                                         <h4 class="h4">Men’s Watches</h4>
                                         <p class="text banners__text">Limited Time Deals</p>
-                                        <a class="btn banners__btn"><span></span></a>
+                                        <Link to="/Catalog/Men’s" class="btn banners__btn"><span></span></Link>
                                     </div>
                                 </div>
                                 <div class="banners__item">
-                                    <img src={ban_2} alt=""></img>
+                                    <img src={ban_2} alt="" />
                                     <div class="banners__caption">
                                         <h4 class="h4">Ladies Watches</h4>
                                         <p class="text banners__text">Don’t miss the moment</p>
-                                        <a class="btn banners__btn"><span></span></a>
+                                        <Link to="/Catalog/Ladies" class="btn banners__btn"><span></span></Link>
                                     </div>
                                 </div>
                                 <div class="banners__item">
-                                    <img src={ban_3} alt=""></img>
+                                    <img src={ban_3} alt="" />
                                     <div class="banners__caption">
                                         <h4 class="h4">Vintage Watches</h4>
                                         <p class="text banners__text">Hyperchrome Match Point</p>
-                                        <a class="btn banners__btn"><span></span></a>
+                                        <Link to="/Catalog/Vintage" class="btn banners__btn"><span></span></Link>
                                     </div>
                                 </div>
                             </div>

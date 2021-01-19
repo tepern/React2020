@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import ThemeContextProvider from "./theme-context/ThemeContext";
 import { Provider as StoreProvider } from "react-redux";
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import './App.scss';
 import Banner from './components/Banner';
 import Banners from './components/Banners';
@@ -16,9 +16,23 @@ import Blog from './components/Blog';
 import Clearance from './components/Clearance';
 import Contacts from './components/Contacts';
 import Cart from './components/Cart';
-import cartReducer from './components/reducers/cartReducer';
+import cartReducer from './store/reducers/cartReducer';
 
-const store = createStore(cartReducer);
+const logger = store => next => action => {
+  console.log('Action:', action.type);
+  
+  let result = next(action);
+  const numberInOrder = store.getState().addedItems.length;
+  const currentItem = store.getState().items.find(item => action.id === item.No);
+  
+  console.log('Subject:', currentItem.name);
+  
+  console.log('Items in cart:', numberInOrder);
+
+  return result;
+}
+
+const store = createStore(cartReducer, applyMiddleware(logger));
 
 function App() {
   

@@ -12,6 +12,8 @@
 }
 
 .cart {
+    display: inline-block;
+    float: left;
     border-top: 2px solid $gold;
     width: 900px;
     max-width: 100%;
@@ -76,5 +78,13 @@
         height: 30px;
         background: url(/assets/images/remove-gold.svg) no-repeat;
         border: none;
+    }
+
+    &-total {
+        display: inline-block;
+        float: right;
+        border: 2px solid #cba181;
+        padding: 30px 30px;
+        border-radius: 5px;
     }
 }
