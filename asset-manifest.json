@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/React2020/static/css/main.664d29c8.chunk.css",
-    "main.js": "/React2020/static/js/main.020f433d.chunk.js",
-    "main.js.map": "/React2020/static/js/main.020f433d.chunk.js.map",
+    "main.js": "/React2020/static/js/main.88617353.chunk.js",
+    "main.js.map": "/React2020/static/js/main.88617353.chunk.js.map",
     "runtime-main.js": "/React2020/static/js/runtime-main.e7e8e674.js",
     "runtime-main.js.map": "/React2020/static/js/runtime-main.e7e8e674.js.map",
-    "static/js/2.21216c87.chunk.js": "/React2020/static/js/2.21216c87.chunk.js",
-    "static/js/2.21216c87.chunk.js.map": "/React2020/static/js/2.21216c87.chunk.js.map",
+    "static/js/2.e258cf32.chunk.js": "/React2020/static/js/2.e258cf32.chunk.js",
+    "static/js/2.e258cf32.chunk.js.map": "/React2020/static/js/2.e258cf32.chunk.js.map",
     "static/js/3.cdafb3cc.chunk.js": "/React2020/static/js/3.cdafb3cc.chunk.js",
     "static/js/3.cdafb3cc.chunk.js.map": "/React2020/static/js/3.cdafb3cc.chunk.js.map",
     "index.html": "/React2020/index.html",
     "static/css/main.664d29c8.chunk.css.map": "/React2020/static/css/main.664d29c8.chunk.css.map",
-    "static/js/2.21216c87.chunk.js.LICENSE.txt": "/React2020/static/js/2.21216c87.chunk.js.LICENSE.txt",
+    "static/js/2.e258cf32.chunk.js.LICENSE.txt": "/React2020/static/js/2.e258cf32.chunk.js.LICENSE.txt",
     "static/media/1.png": "/React2020/static/media/1.828e1818.png",
     "static/media/10.png": "/React2020/static/media/10.719082e9.png",
     "static/media/2.png": "/React2020/static/media/2.2d74f046.png",
@@ -37,8 +37,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.e7e8e674.js",
-    "static/js/2.21216c87.chunk.js",
+    "static/js/2.e258cf32.chunk.js",
     "static/css/main.664d29c8.chunk.css",
-    "static/js/main.020f433d.chunk.js"
+    "static/js/main.88617353.chunk.js"
   ]
 }
