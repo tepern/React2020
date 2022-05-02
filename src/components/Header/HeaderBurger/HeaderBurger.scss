@@ -1,0 +1,25 @@
+@import "../../../styles/partial/variables.scss";
+
+.header {
+
+  &-burger {
+    display: none;
+
+    @media(max-width: $tablet_width) {
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+    }
+  }
+  
+  &__btn {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    background-image: url(/assets/images/icons/menu_btn_new.svg);
+    background-color: transparent;
+    background-size: cover;
+    border: none;
+  }
+}

@@ -16,10 +16,24 @@
     z-index: -1;
     transition: $transition_all;
 
+    @media(max-width: $tablet_width) {
+        position: relative;
+        top: 10px;
+        left: 0;
+        padding: 0;
+        width: 100%;
+        background: transparent;
+        visibility: hidden;
+    }
+
     &_active {
         visibility: visible;
         opacity: 1;
         z-index: 2;
+
+        @media(max-width: $tablet_width) {
+            padding: 20px 0;
+        }
 
         .sub-menu__item {
             display: block;
@@ -29,6 +43,16 @@
     &__item {
         display: none;
         margin: 5px 40px;
+
+        @media(max-width: $tablet_width) {
+            margin: 5px 0px;
+            padding-left: 20px;
+            text-align: left;
+        }
+    }
+
+    &__link {
+        font-size: 16px;
     }
 }
 

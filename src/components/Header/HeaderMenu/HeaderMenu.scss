@@ -1,47 +1,125 @@
 @import "../../../styles/partial/variables.scss";
 
 .header-menu {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    &__item {
-        position: relative;
-        margin: 0 19px;
+  @media(max-width: $tablet_width) {
+    position: fixed;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    margin-top: 0;
+    padding: 19px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: $gray;
+    z-index: 10;
+    transform: translate(-100%);
+  }
+
+  &.open {
+    @media(max-width: $tablet_width) {
+      transform: translate(0);
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin: 0 19px;
+
+    @media(max-width: $tablet_width) {
+      margin: 0;
+      width: 100%;
+      padding: 17px 35px 17px 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-align: center;
+
+    @media(max-width: $tablet_width) {
+      display: block;
+      font-size: 16px;
+      color: $gold;
+      text-align: left;
+      text-transform: uppercase;
     }
 
-    &__link {
-       position: relative;
-       text-align: center;
+    &::before {
+      position: absolute;
+      top: auto;
+      left: 50%;
+      bottom: -4px;
+      width: 0;
+      height: 2px; 
+      content: "";
+      background: $gold;
+      transition: $transition_all;
 
-       &_active {
-           color: $gold;
+      @media(max-width: $tablet_width) {
+        display: none;
+      }
+     }
 
-            &::before {
-                left: 0;
-                width: 100%;
-                transition: $transition_all;
-            }
-       }
+    &:hover {
+      color: $gold;
 
-       &::before {
-           position: absolute;
-           top: auto;
-           left: 50%;
-           bottom: -4px;
-           width: 0;
-           height: 2px; 
-           content: "";
-           background: $gold;
-           transition: $transition_all;
-       }
+      &::before {
+        left: 0;
+        width: 100%;
+      }
+    }
 
-        &:hover {
-            color: $gold;
+    span {
 
-            &::before {
-                left: 0;
-                width: 100%;
-            }
+      @media(max-width: $tablet_width) {
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        width: 22px;
+        height: 24px;
+      }
+
+      &::after {
+
+        @media(max-width: $tablet_width) {
+          position: absolute;
+          content: "";
+          width: 10px;
+          height: 10px;
+          border-top: 2px solid $gold;
+          border-left: 2px solid $gold;
+          transform: rotate(-135deg); 
         }
+      }
     }
+
+    &_active {
+      color: $gold;
+
+      &::before {
+        left: 0;
+        width: 100%;
+        transition: $transition_all;
+
+        @media(max-width: $tablet_width) {
+          display: none;
+        }
+      }
+
+      span {
+
+        &::after {
+
+          @media(max-width: $tablet_width) {
+            transform: rotate(45deg); 
+          }
+        }
+      }
+    }
+  }
 }
