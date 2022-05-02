@@ -1,25 +1,44 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "files": {
+    "main.css": "/React2020/static/css/main.664d29c8.chunk.css",
+    "main.js": "/React2020/static/js/main.88617353.chunk.js",
+    "main.js.map": "/React2020/static/js/main.88617353.chunk.js.map",
+    "runtime-main.js": "/React2020/static/js/runtime-main.e7e8e674.js",
+    "runtime-main.js.map": "/React2020/static/js/runtime-main.e7e8e674.js.map",
+    "static/js/2.e258cf32.chunk.js": "/React2020/static/js/2.e258cf32.chunk.js",
+    "static/js/2.e258cf32.chunk.js.map": "/React2020/static/js/2.e258cf32.chunk.js.map",
+    "static/js/3.cdafb3cc.chunk.js": "/React2020/static/js/3.cdafb3cc.chunk.js",
+    "static/js/3.cdafb3cc.chunk.js.map": "/React2020/static/js/3.cdafb3cc.chunk.js.map",
+    "index.html": "/React2020/index.html",
+    "static/css/main.664d29c8.chunk.css.map": "/React2020/static/css/main.664d29c8.chunk.css.map",
+    "static/js/2.e258cf32.chunk.js.LICENSE.txt": "/React2020/static/js/2.e258cf32.chunk.js.LICENSE.txt",
+    "static/media/1.png": "/React2020/static/media/1.828e1818.png",
+    "static/media/10.png": "/React2020/static/media/10.719082e9.png",
+    "static/media/2.png": "/React2020/static/media/2.2d74f046.png",
+    "static/media/3.png": "/React2020/static/media/3.2c72f7f6.png",
+    "static/media/4.png": "/React2020/static/media/4.713bce59.png",
+    "static/media/5.png": "/React2020/static/media/5.ded67ee0.png",
+    "static/media/6.png": "/React2020/static/media/6.d8fdced5.png",
+    "static/media/7.png": "/React2020/static/media/7.06872a91.png",
+    "static/media/8.png": "/React2020/static/media/8.a2e717d0.png",
+    "static/media/9.png": "/React2020/static/media/9.898477ab.png",
+    "static/media/styles.scss": "/React2020/static/media/JosefinSans-Regular.cb2e8ff1.eot",
+    "static/media/ban_1.jpg": "/React2020/static/media/ban_1.a6305374.jpg",
+    "static/media/ban_2.jpg": "/React2020/static/media/ban_2.0ef8b976.jpg",
+    "static/media/ban_3.jpg": "/React2020/static/media/ban_3.668964a3.jpg",
+    "static/media/ban_left.png": "/React2020/static/media/ban_left.a681c45e.png",
+    "static/media/BannerMiddle.scss": "/React2020/static/media/ban_middle.png.97d9ac45.jpg",
+    "static/media/ban_right.jpg": "/React2020/static/media/ban_right.eab5c6d2.jpg",
+    "static/media/Banner.scss": "/React2020/static/media/banner.ace4e273.png",
+    "static/media/Header.scss": "/React2020/static/media/cart-gold.bef4bac8.svg",
+    "static/media/Products.scss": "/React2020/static/media/cart.b862dcdc.svg",
+    "static/media/HeaderBurger.scss": "/React2020/static/media/menu_btn_new.20348dfc.svg",
+    "static/media/Cart.scss": "/React2020/static/media/remove-gold.55a1574a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e7e8e674.js",
+    "static/js/2.e258cf32.chunk.js",
+    "static/css/main.664d29c8.chunk.css",
+    "static/js/main.88617353.chunk.js"
+  ]
 }
