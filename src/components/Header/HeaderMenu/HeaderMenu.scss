@@ -17,6 +17,7 @@
     background: $gray;
     z-index: 10;
     transform: translate(-100%);
+    transition: $transition_all;
   }
 
   &.open {

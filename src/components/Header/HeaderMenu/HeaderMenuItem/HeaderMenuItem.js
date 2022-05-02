@@ -41,8 +41,8 @@ export default class HeaderMenuItem extends Component {
             return (
                 <li class="header-menu__item">
                     {this.props.items.length===0?
-                        <a href={`/${this.props.name}`} className={this.state.class}>{this.props.name}
-                        </a>:
+                        <Link to={`/${this.props.name}`} className={this.state.class}>{this.props.name}
+                        </Link>:
                         <a className={this.state.class}>{this.props.name}
                             <span onClick={this.itemToggle}></span>
                         </a>
