@@ -124,3 +124,37 @@
     }
   }
 }
+
+.lightmode {
+  
+  .header {
+
+    &-menu {
+
+      &__link {
+
+        @media(max-width: $tablet_width) {
+          color: $gold;
+        }
+      }
+    }
+  }
+
+  .sub {
+
+    &-menu {
+
+      @media(max-width: $tablet_width) {
+        background: $dark;
+        box-shadow: none;
+      }
+
+      &__link {
+
+        @media(max-width: $tablet_width) {
+          color: $base;
+        }
+      }
+    }
+  }
+}

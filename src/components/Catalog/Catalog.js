@@ -23,10 +23,12 @@ class Catalog extends Component {
                               {products.map(function(item) { 
                                 if(collection){
                                   if(item.Collections.includes(collection)) {
-                                    return <Product id={item.No} name={item.name} price={item.price} img={item.img}></Product>
+                                    return <Product id={item.No} name={item.name} price={item.price} img={item.img}>
+                                    </Product>
                                   }
                                 } else {
-                                  return <Product id={item.No} name={item.name} price={item.price} img={item.img}></Product>
+                                  return <Product id={item.No} name={item.name} price={item.price} img={item.img}>
+                                  </Product>
                                 }
                                } 
                               )}
