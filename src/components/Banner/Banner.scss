@@ -6,6 +6,20 @@
     background-image: url(/assets/images/banners/banner.png);
     background-position: 50% 0%;
 
+    @media(max-width: $ipad_width) {
+        background-position: 50% 50%;
+    }
+
+    @media(max-width: $big-mobile-min_width) {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    @media(max-width: $mobile_width) {
+        padding-top: 150px;
+        padding-bottom: 110px;
+    }
+
     &.lightmode {
         filter: invert(1);
 
@@ -44,6 +58,10 @@
     &__text {
         max-width: 50%;
         text-align: center;
+
+        @media(max-width: $mobile_width) {
+            max-width: 75%;
+        }
     }
 
     &__btn {

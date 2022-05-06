@@ -12,3 +12,16 @@
      }
   }
 }
+
+.header {
+  
+  &.header_fixed {
+
+    .toggle {
+
+      &-box {
+        display: none;
+      }
+    }
+  }
+}
