@@ -6,6 +6,14 @@
     flex-wrap: nowrap;
     transition: $transition_all;
 
+     @media(max-width: $tablet_width) {
+        width: 500%;
+    }
+
+    @media(max-width: $mobile_width) {
+        width: 1000%;
+    }
+
     &-title {
         position: relative;
         display: inline-block;
@@ -56,6 +64,11 @@
         text-align: center;
         cursor: pointer;
 
+        @media(max-width: $tablet_width) {
+           padding-left: 10px;
+           padding-right: 10px;
+        }
+
         &:hover {
             .product-button {
                 visibility: visible;
@@ -71,11 +84,20 @@
     &__title {
         margin-top: 14px;
         letter-spacing: 0.01em;
+
+        @media(max-width: $tablet_width) {
+           font-size: 16px;
+        }
+
     }
 
     &__price {
         margin-top: 10px;
         color: $gold;
+
+        @media(max-width: $tablet_width) {
+           font-size: 16px;
+        }
     }
 
     &-dots {
@@ -114,6 +136,12 @@
         transition: $transition_all;
         visibility: hidden;
         opacity: 0;
+
+        @media(max-width: $tablet_width) {
+           top: 80%;
+           visibility: visible;
+           opacity: 1;
+        }
     }
 
     &__btn {

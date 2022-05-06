@@ -5,6 +5,11 @@
     margin-top: 30px;
     margin-bottom: 50px;
 
+    @media(max-width: $s_mobile_width) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     &__item {
         position: relative;
         margin-left: 10px;
@@ -19,10 +24,18 @@
         padding-top: 35px;
         text-align: center;
         z-index: 1;
+
+        @media(max-width: $tablet_width) {
+            padding-top: 15px;
+        }
     }
 
     &__text {
         margin-bottom: 10px;
+
+        @media(max-width: $tablet_width) {
+            font-size: 12px;
+        }
     }
 
     &__btn {

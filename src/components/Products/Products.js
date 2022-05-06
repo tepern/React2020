@@ -8,17 +8,37 @@ import { addToCart } from '../../store/actions/cartActions';
 class Products extends Component {
 
     constructor(props) {
-      super(props);
+        super(props);
 
-      this.state = {
-          index: 1
-      };
+        this.state = {
+            index: '1',
+            mobile: true
+        };
 
       this.sliderItemActive = this.sliderItemActive.bind(this);
     }
 
+    componentDidMount() {
+        const node = this;
+    
+        if(window.innerWidth > 991) {
+            node.setState((state,props) => ({mobile: false}));      
+        } else {
+            node.setState((state,props) => ({mobile: true}));
+        }   
+    }
+
     componentDidUpdate() {
-       
+        const node = this;
+        window.addEventListener('resize', this.handlerResize = 
+            function() {
+                if(window.innerWidth > 991) {
+                    node.setState((state,props) => ({mobile: false}));      
+                } else {
+                    node.setState((state,props) => ({mobile: true}));
+                }
+            }
+        );           
     }
 
     sliderItemActive(dataIndex) {
@@ -33,6 +53,7 @@ class Products extends Component {
         const products = this.props.items;
         const trans = {
             transform: 'translate3d(' + (this.state.index-1)*(-10) + '%, 0px,0px)'};
+        
         return (
             <ThemeContext.Consumer>{(context) => {
                 const theme = !context.lightTheme ? '' : ' lightmode';
@@ -45,7 +66,9 @@ class Products extends Component {
                                     {products.map(item => <Product id={item.No} name={item.name} price={item.price} img={item.img}></Product>)}
                                 </div>
                                 <div className="product-dots" id="pagination">
-                                    {products.map(item => <span className={`product-dots__item ${this.state.index === item.No ? ' product-dots__item_active' : ''}`} onClick={() => this.sliderItemActive(item.No)} dataIndex = { item.No }></span>).splice(-products.length,5)}
+                                    {products.map(item => 
+                                        <span className={`product-dots__item ${this.state.index === item.No ? ' product-dots__item_active' : ''}`} onClick={() => this.sliderItemActive(item.No)} dataIndex = { item.No }>
+                                        </span>).splice(-products.length,products.length - Number(!this.state.mobile) * products.length/2)}
                                 </div> 
                             </div>
                         </div>
