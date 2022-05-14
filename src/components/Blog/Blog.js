@@ -10,7 +10,7 @@ export default class Blog extends Component {
             return (
               <section className={`section section_padding_top section_padding_bottom`+ theme}>
                   <div class="container">
-                      <h1 class="h1">Blog</h1>
+                      <h1 class="h1 center">Blog</h1>
                   </div>
               </section>
             );

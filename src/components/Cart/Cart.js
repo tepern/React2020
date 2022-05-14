@@ -23,7 +23,7 @@ class Cart extends Component {
             const theme = !context.lightTheme ? '' : ' lightmode';  
             return (
               <section className={`section section_padding_top section_padding_bottom`+ theme}>
-                  <div class="cart-container">
+                  <div class="cart-container container">
                       <div class="cart-title">Your Shopping Cart</div>
                         <div class="cart">
                           { 

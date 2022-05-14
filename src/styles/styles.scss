@@ -128,6 +128,10 @@ img {
     color: $black !important;
 }
 
+.center {
+    text-align: center;
+}
+
 .section {
     position: relative;
     overflow: hidden;
@@ -139,6 +143,10 @@ img {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+
+    @media(max-width: $tablet_width) {
+        width: 100%;
+    }
 
     @media (max-width: $mobile_width) {
         padding-left: 10px;

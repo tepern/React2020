@@ -56,7 +56,8 @@ export default class HeaderMenuItem extends Component {
             return (
                 <li class="header-menu__item" onMouseEnter={this.itemActive} onMouseLeave={this.itemNoActive}>
                     {this.props.items.length===0?
-                        <Link to={`/${this.props.name}`} className={this.state.class}>{this.props.name}</Link>:
+                        <Link to={`/${this.props.name}`} className={this.state.class}>{this.props.name}
+                        </Link>:
                         <a className={this.state.class}>{this.props.name}
                             <span></span>
                         </a>

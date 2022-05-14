@@ -13,8 +13,8 @@ class Header extends Component {
     super(props);
 
     this.state = {
-        class: "header",
-        menuOpen: false,
+      class: "header",
+      menuOpen: false,
     };
 
     this.menuOpen = this.menuOpen.bind(this);
@@ -34,19 +34,23 @@ class Header extends Component {
         }
       }
     );
+    window.addEventListener('resize', this.handlerResize = 
+      function() {
+        node.setState({menuOpen: false});
+    });
   }
 
-  componentDidUpdate() { 
+  /*componentDidUpdate() { 
     const node = this;
     window.addEventListener('resize', this.handlerResize = 
       function() {
         node.setState({menuOpen: false});
       });
-  }
+  }*/
 
-  componentWillUnmount() {
+  /*componentWillUnmount() {
     window.removeEventListener('scroll', this.handlerScroll);
-  }
+  }*/
 
   menuOpen() {
     this.setState({ menuOpen: true});

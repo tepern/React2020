@@ -20,7 +20,10 @@
     .toggle {
 
       &-box {
-        display: none;
+
+        @media(max-width: $tablet_width) {
+          display: none;
+        }
       }
     }
   }

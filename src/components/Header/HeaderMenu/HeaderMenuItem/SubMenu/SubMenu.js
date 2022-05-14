@@ -4,10 +4,13 @@ import SubMenuItem from './SubMenuItem';
 
 export default class SubMenu extends Component {
     
-    render() {
-       
-       return (
-            <ul className={this.props.subMenuClass}>{this.props.items.map(item => <SubMenuItem name={item} parent={this.props.parentItem}></SubMenuItem>)}</ul>
-        );
-    }
+  render() {
+     
+    return (
+      <ul className={this.props.subMenuClass}>
+        {this.props.items.map(item => 
+          <SubMenuItem key={item} name={item} parent={this.props.parentItem}></SubMenuItem>)}
+      </ul>
+    );
+  }
 }
