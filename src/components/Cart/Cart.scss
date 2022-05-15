@@ -131,7 +131,7 @@
 
     &__remove {
         width: 25px;
-        height: 30px;
+        height: 21px;
         background: url(/assets/images/remove-gold.svg) no-repeat;
         border: none;
     }
@@ -155,6 +155,7 @@
     }
 
     &-quantity {
+        position: relative;
         width: 70px;
         margin-top: 5px;
         padding: 10px;
@@ -164,6 +165,56 @@
         @media(max-width: $s_mobile_width) {
             width: 60px;
             padding: 5px 10px;
+        }
+
+        span {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            display: block;
+            width: 18px;
+            opacity: 1;
+            transform: translateY(-50%);
+        }
+
+        button {
+            position: relative;
+            display: block;
+            width: 18px;
+            height: 10px;
+            padding: 0;
+            border: none;
+            background-color: $base;
+        }
+    }
+
+    &__add {
+
+        &::before {
+            position: absolute;
+            top: 4px;
+            left: 6px;
+            width: 5px;
+            height: 5px;
+            content: '';
+            transform: rotate(135deg);
+            border-left: 1px solid $gray;
+            border-bottom: 1px solid $gray;
+        }
+    }
+
+    &__sub {
+
+        &::before {
+            position: absolute;
+            bottom: 4px;
+            left: 6px;
+            width: 5px;
+            height: 5px;
+            content: '';
+            transform: rotate(-45deg);
+            border-left: 1px solid $gray;
+            border-bottom: 1px solid $gray;
         }
     }
 
