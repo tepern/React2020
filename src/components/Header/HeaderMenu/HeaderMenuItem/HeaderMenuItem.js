@@ -41,14 +41,16 @@ export default class HeaderMenuItem extends Component {
             return (
                 <li class="header-menu__item">
                     {this.props.items.length===0?
-                        <Link to={`/${this.props.name}`} className={this.state.class}>{this.props.name}
+                        <Link to={`/${this.props.name}`} className={this.state.class}
+                         onClick={this.props.menuMobile}>
+                         {this.props.name}
                         </Link>:
                         <a className={this.state.class}>{this.props.name}
                             <span onClick={this.itemToggle}></span>
                         </a>
                     }
                     {this.props.items.length>0&&
-                        <SubMenu item parentItem={this.props.name} items={this.props.items} subMenuClass={this.state.subMenuClass} visible={this.state.visible}></SubMenu>
+                        <SubMenu menuMobile={this.props.menuMobile} item parentItem={this.props.name} items={this.props.items} subMenuClass={this.state.subMenuClass} visible={this.state.visible}></SubMenu>
                     }
                 </li>
             );

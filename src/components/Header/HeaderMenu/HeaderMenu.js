@@ -13,7 +13,7 @@ export default class HeaderMenu extends Component {
       
       <ul className={menuClass}>
         {topMenu.map(
-          item => <HeaderMenuItem key={item.title} mobile={this.props.menuOpen} name={item.title} items={item.items}></HeaderMenuItem>
+          item => <HeaderMenuItem menuMobile={this.props.menuMobile} key={item.title} mobile={this.props.menuOpen} name={item.title} items={item.items}></HeaderMenuItem>
         )}
       </ul>
     );

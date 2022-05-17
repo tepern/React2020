@@ -9,7 +9,7 @@ export default class SubMenu extends Component {
     return (
       <ul className={this.props.subMenuClass}>
         {this.props.items.map(item => 
-          <SubMenuItem key={item} name={item} parent={this.props.parentItem}></SubMenuItem>)}
+          <SubMenuItem menuMobile={this.props.menuMobile} key={item} name={item} parent={this.props.parentItem}></SubMenuItem>)}
       </ul>
     );
   }

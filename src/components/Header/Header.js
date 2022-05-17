@@ -40,18 +40,6 @@ class Header extends Component {
     });
   }
 
-  /*componentDidUpdate() { 
-    const node = this;
-    window.addEventListener('resize', this.handlerResize = 
-      function() {
-        node.setState({menuOpen: false});
-      });
-  }*/
-
-  /*componentWillUnmount() {
-    window.removeEventListener('scroll', this.handlerScroll);
-  }*/
-
   menuOpen() {
     this.setState({ menuOpen: true});
   }
@@ -83,7 +71,7 @@ class Header extends Component {
                   </span>
                   <span class="products-in-cart">{inCart}</span></Link>
               </div>
-              <HeaderMenu menuOpen={this.state.menuOpen}/>
+              <HeaderMenu menuOpen={this.state.menuOpen} menuMobile={this.menuClose} />
               <div className={this.state.menuOpen ? "mobile-menu-close open" : "mobile-menu-close"}>
                 <button className="mobile-menu-close__btn" onClick={this.menuClose}></button>
               </div>
